@@ -1,5 +1,4 @@
 import unittest
-from pathlib import Path
 from app.file_loader import FileLoader
 
 class LiveFileLoaderTest(unittest.TestCase):
