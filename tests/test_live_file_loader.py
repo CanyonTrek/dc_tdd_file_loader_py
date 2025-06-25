@@ -1,7 +1,7 @@
 import unittest
 from app.file_loader import FileLoader
 
-class LiveFileLoaderTest(unittest.TestCase):
+class TestLiveFileLoader(unittest.TestCase):
     """
     The initial design is described in this test.
 

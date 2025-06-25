@@ -9,19 +9,20 @@ tdd_file_loader/
 ├── app/
 │   └── file_loader.py          # File loading logic
 ├── tests/
-│   └── test_file_loader.py     # Unit tests
+│   └── test_live_file_loader.py# Unit tests
 └── main.py                     # Entry point for testing the module
 ```
 
 ## Git Tags and Milestones
 
-| Tag | Description |
-|-----|-------------|
-| `start_here` | Project scaffold with folders and empty files |
-| `v1.0-code_in_main-read_text_file` | File reading logic added directly in `main.py` |
-| `v1.2-file_loading_in_its_own_class` | Created `FileLoader` class in its own module |
+| Tag                                     | Description                                   |
+|-----------------------------------------|-----------------------------------------------|
+| `start_here`                            | Project scaffold with folders and empty files |
+| `v1.0-code_in_main-read_text_file`      | File reading logic added directly in `main.py`|
+| `v1.2-file_loading_in_its_own_class`    | Created `FileLoader` class in its own module  |
 | `v1.3-moved_file_loading_into_function` | Refactored file loading logic into a function |
-| `v1.4` (same as `main`) | Final clean version with full test coverage |
+| `v1.4` (same as `main`)                 | Final clean version with full test coverage   |
+|-----------------------------------------------------------------------------------------|
 
 ## Differences from the Java Project
 
@@ -29,7 +30,7 @@ tdd_file_loader/
 - Uses Python’s `unittest` and `unittest.mock` instead of JUnit/Mockito
 - Relies on duck typing instead of interface implementation
 - Uses simple modules and folder-based structure
-- Code is simplified using Python idioms like `with open(...)` and list comprehensions
+- Code is simplified using Python idioms like `with open(...)` and list comprehensions(yum!)
 
 ## Running the Application
 
