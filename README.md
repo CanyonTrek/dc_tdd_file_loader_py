@@ -68,6 +68,15 @@ Serves as a reminder of why we avoid tightly coupling to external systems in uni
 - Demonstrates total decoupling from the filesystem.
 - Ensures deterministic, fast, and reliable tests.
 
+### ✅ `test_load_all_of_file_using_mock`
+Uses a custom FakeFile class to simulate the behavior of a file reader.
+
+- Mocks the read_all_lines() method to return a predefined list (e.g., ["Hello", "world"])
+- Injects this behavior into FileLoader via a lambda
+
+Purpose: Validates that FileLoader handles external dependencies via mocking — without touching the real file system.
+
+Benefit: Highlights how to simulate external services/interfaces in Python cleanly using test doubles (fakes/mocks), helping reinforce decoupling and reliable tests.
 
 ## Running the Application
 

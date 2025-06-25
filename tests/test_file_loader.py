@@ -37,6 +37,32 @@ class TestFileLoader(unittest.TestCase):
         self.assertEqual(expected_bytes_read, bytes_read)
 
 
+    def test_load_all_of_file_using_mock(self):
+        # Arrange
+        file_to_load = "c:/tmp/KeyboardHandler.txt"
+        cut = FileLoader(file_to_load)
+
+        # Simulate file content
+        pretend_file_content = ["Hello", "world"]
+        expected_bytes_read = 10
+
+        # Define a fake file interface with a mocked method
+        class FakeFile:
+            def read_all_lines(self, path, encoding):
+                return pretend_file_content
+
+        fake_file = FakeFile()
+
+        # Act
+        bytes_read = cut.load_file_with_func(
+            lambda fname: fake_file.read_all_lines(fname, "utf-8")
+        )
+
+        # Assert
+        self.assertEqual(expected_bytes_read, bytes_read)
+
+
+
 if __name__ == '__main__':
     unittest.main()
 
