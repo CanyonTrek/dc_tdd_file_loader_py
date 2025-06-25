@@ -12,12 +12,8 @@ class TestFileLoader(unittest.TestCase):
         # Prepare fake file contents
         pretend_file_content = ["Hello", "world"]
 
-        # Define the mock loading function (acts like the lambda in Java)
-        def mock_loader_func(fname):
-            return pretend_file_content
-
         # Act
-        bytes_read = cut.load_file_with_func(mock_loader_func)
+        bytes_read = cut.load_file_with_func(lambda fname: pretend_file_content)
 
         # Assert
         self.assertEqual(expected_bytes_read, bytes_read)
