@@ -21,6 +21,24 @@ class TestFileLoader(unittest.TestCase):
         self.assertEqual(expected_bytes_read, bytes_read)
 
 
+    def test_load_all_of_file_via_stub(self):
+        """ Use a hardcoded stub to simulate reading two lines of text
+            Benefit - no dependencyon actual files or filesystem
+                    - portable test
+                    - FileLoader is more flexible and decoupled allowing
+                      file loading mechanism to be injected
+        """
+        # arrange
+        file_to_load = ""
+        cut = FileLoader(file_to_load)
+        expected_bytes_read = 10
+
+        # act
+        bytes_read = cut.load_file_with_func(lambda fname: ["Hello", "world"])
+
+        # assert
+        self.assertEqual(expected_bytes_read, bytes_read)
+
 
 if __name__ == '__main__':
     unittest.main()
